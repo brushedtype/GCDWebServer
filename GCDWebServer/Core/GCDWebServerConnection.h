@@ -178,6 +178,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)close;
 
+/**
+ *  Hack to expose `request`, to manipulate it in `-didReadBytes:length:`.
+ */
+- (nullable GCDWebServerRequest*)currentRequest_Hack;
+
 @end
 
 NS_ASSUME_NONNULL_END

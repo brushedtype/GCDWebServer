@@ -840,4 +840,8 @@ static inline BOOL _CompareResources(NSString* responseETag, NSString* requestET
   }
 }
 
+- (nullable GCDWebServerRequest*)currentRequest_Hack {
+  return self->_request;
+} 
+
 @end
