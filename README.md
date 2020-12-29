@@ -2,7 +2,7 @@ Overview
 ========
 
 [![Build Status](https://travis-ci.org/swisspol/GCDWebServer.svg?branch=master)](https://travis-ci.org/swisspol/GCDWebServer)
-[![Version](http://cocoapod-badges.herokuapp.com/v/GCDWebServer/badge.png)](http://cocoadocs.org/docsets/GCDWebServer)
+[![Version](http://cocoapod-badges.herokuapp.com/v/GCDWebServer/badge.png)](https://cocoapods.org/pods/GCDWebServer)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/GCDWebServer/badge.png)](https://github.com/swisspol/GCDWebServer)
 [![License](http://img.shields.io/cocoapods/l/GCDWebServer.svg)](LICENSE)
 
@@ -158,12 +158,12 @@ func initWebServer() {
 
     let webServer = GCDWebServer()
 
-    webServer.addDefaultHandlerForMethod("GET", requestClass: GCDWebServerRequest.self, processBlock: {request in
-    return GCDWebServerDataResponse(HTML:"<html><body><p>Hello World</p></body></html>")
+    webServer.addDefaultHandler(forMethod: "GET", request: GCDWebServerRequest.self, processBlock: {request in
+            return GCDWebServerDataResponse(html:"<html><body><p>Hello World</p></body></html>")
+            
+        })
         
-    })
-    
-    webServer.runWithPort(8080, bonjourName: "GCD Web Server")
+    webServer.start(withPort: 8080, bonjourName: "GCD Web Server")
     
     print("Visit \(webServer.serverURL) in your web browser")
 }

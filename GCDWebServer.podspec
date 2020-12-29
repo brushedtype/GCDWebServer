@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'GCDWebServer'
-  s.version  = '3.5.3'
+  s.version  = '3.5.4'
   s.author   =  { 'Pierre-Olivier Latour' => 'info@pol-online.net' }
   s.license  = { :type => 'BSD', :file => 'LICENSE' }
   s.homepage = 'https://github.com/swisspol/GCDWebServer'
@@ -26,9 +26,9 @@ Pod::Spec.new do |s|
     cs.private_header_files = "GCDWebServer/Core/GCDWebServerPrivate.h"
     cs.requires_arc = true
     cs.ios.library = 'z'
-    cs.ios.frameworks = 'MobileCoreServices', 'CFNetwork'
+    cs.ios.frameworks = 'CoreServices', 'CFNetwork'
     cs.tvos.library = 'z'
-    cs.tvos.frameworks = 'MobileCoreServices', 'CFNetwork'
+    cs.tvos.frameworks = 'CoreServices', 'CFNetwork'
     cs.osx.library = 'z'
     cs.osx.framework = 'SystemConfiguration'
   end
